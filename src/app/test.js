@@ -1,5 +1,5 @@
 function example(n){
-    return n*3
+    return n*5
 }
 
 test("Example test", () => {
