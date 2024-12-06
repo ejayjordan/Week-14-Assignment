@@ -14,8 +14,8 @@ export default function Home() {
 
     <input type="text" value={count} onChange={handleChange}></input>
     <button type="submit" value="submit">Click Me!</button>
-
     <input type="text" value={count} readOnly></input>
+
   </div>
   );
 }
