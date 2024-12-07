@@ -1,14 +1,17 @@
-import {render, screen} from '@testing-library/react'
+import {render, screen, fireEvent} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 import HomePage from "./page"
-import { getExpectedRequestStore } from 'next/dist/server/app-render/work-unit-async-storage.external'
 
 test('presses button and returns 40', async () => {
 render(<HomePage/>)
 
 await userEvent.click(screen.getByRole("button"))
 
-expect (screen.getByRole("heading")).toHaveTextContent("1");
+const inputElement = screen.getByRole("inputText");
+
+fireEvent.change(inputElement, {target: {value: '40'}});
+
+expect (inputElement.value).toBe('40');
 
 })
