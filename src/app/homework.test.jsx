@@ -8,10 +8,10 @@ render(<HomePage/>)
 
 await userEvent.click(screen.getByRole("button"))
 
-const inputElement = screen.getByRole("inputText");
+const inputElement = screen.getByTestId("inputText");
 
 fireEvent.change(inputElement, {target: {value: '40'}});
 
-expect (inputElement.value).toBe('40');
+expect(screen.getByTestId('inputDisplay').value).toBe('40')
 
 })
